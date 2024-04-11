@@ -76,6 +76,44 @@ export class Player {
       this.isMoving = true
     })
 
+    
+    onKeyDown("escape", () => {
+      if (this.gameObj.paused) return
+
+      const allObjs = get("*")
+      for (let i = 0; i < allObjs.length; i++) {
+          allObjs[i].paused = true
+      }
+      getSprite("logo").data.frames[0].w = 0.03125
+
+      const txtinfo = get("info")
+      for (let i = 0; i < txtinfo.length; i++) {
+          txtinfo[i].hidden = false
+      }
+  })
+
+  onKeyDown("enter", () => {
+      if (!this.gameObj.paused) return
+
+      const allObjs = get("*")
+      for (let i = 0; i < allObjs.length; i++) {
+          allObjs[i].paused = false
+      }
+
+      const txtinfo = get("info")
+      for (let i = 0; i < txtinfo.length; i++) {
+          txtinfo[i].hidden = true
+      }
+
+      getSprite("logo").data.frames[0].w = -1
+  })
+
+  onKeyDown("r", () => {
+      if (!this.gameObj.paused) return
+      setData("Level", 1)
+      go(1)
+  })
+
     onKeyDown("right", () => {
       if (this.gameObj.paused) return
       if (this.gameObj.curAnim() !== "run") this.gameObj.play("run")
@@ -185,6 +223,7 @@ export class Player {
     onUpdate(() => {
       coinCountUI.text = `${this.coins} / ${coinCountUI.fullCoinCount}`
       if (this.coins === coinCountUI.fullCoinCount) {
+        setData("Level", this.isInTerminalScene ? "end" : this.currentLevelScene + 1)
         go(this.isInTerminalScene ? "end" : this.currentLevelScene + 1)
       }
     })

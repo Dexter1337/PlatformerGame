@@ -47,6 +47,41 @@ const scenes = {
     level1.drawBackground("forest-background")
     level1.drawMapLayout(level1Layout, level1Mappings)
 
+    {
+      add([
+          sprite("logo"),
+          fixed(),
+          area(),
+          anchor("center"),
+          pos(center().x, center().y-200),
+          scale(8),
+      ])
+      add([
+          text("Press [ R ] to Restart Game", { size: 24, font: "Round" }),
+          fixed(),
+          area(),
+          "info",
+          anchor("center"),
+          pos(center().x, center().y + 50),
+          opacity(),
+      ])
+      add([
+          text("Press [ Enter ] to resume Game", { size: 24, font: "Round" }),
+          fixed(),
+          area(),
+          "info",
+          anchor("center"),
+          pos(center().x, center().y + 100),
+          opacity(),
+      ])
+
+      getSprite("logo").data.frames[0].w = -1
+      const txtinfo = get("info")
+      for (let i = 0; i < txtinfo.length; i++) {
+          txtinfo[i].hidden = true
+      }
+  }
+
     const player = new Player(
       level1Config.playerStartPosX,
       level1Config.playerStartPosY,
@@ -96,6 +131,41 @@ const scenes = {
     const level2 = new Level()
     level2.drawBackground("castle-background")
     level2.drawMapLayout(level2Layout, level2Mappings)
+
+    {
+      add([
+          sprite("logo"),
+          fixed(),
+          area(),
+          anchor("center"),
+          pos(center().x, center().y-200),
+          scale(8),
+      ])
+      add([
+          text("Press [ R ] to Restart Game", { size: 24, font: "Round" }),
+          fixed(),
+          area(),
+          "info",
+          anchor("center"),
+          pos(center().x, center().y + 50),
+          opacity(),
+      ])
+      add([
+          text("Press [ Enter ] to resume Game", { size: 24, font: "Round" }),
+          fixed(),
+          area(),
+          "info",
+          anchor("center"),
+          pos(center().x, center().y + 100),
+          opacity(),
+      ])
+
+      getSprite("logo").data.frames[0].w = -1
+      const txtinfo = get("info")
+      for (let i = 0; i < txtinfo.length; i++) {
+          txtinfo[i].hidden = true
+      }
+  }
 
     const player = new Player(
       level2Config.playerStartPosX,
@@ -160,6 +230,41 @@ const scenes = {
     level3.drawBackground("sky-background-1")
     level3.drawBackground("sky-background-2")
     level3.drawMapLayout(level3Layout, level3Mappings)
+
+    {
+      add([
+          sprite("logo"),
+          fixed(),
+          area(),
+          anchor("center"),
+          pos(center().x, center().y-200),
+          scale(8),
+      ])
+      add([
+          text("Press [ R ] to Restart Game", { size: 24, font: "Round" }),
+          fixed(),
+          area(),
+          "info",
+          anchor("center"),
+          pos(center().x, center().y + 50),
+          opacity(),
+      ])
+      add([
+          text("Press [ Enter ] to resume Game", { size: 24, font: "Round" }),
+          fixed(),
+          area(),
+          "info",
+          anchor("center"),
+          pos(center().x, center().y + 100),
+          opacity(),
+      ])
+
+      getSprite("logo").data.frames[0].w = -1
+      const txtinfo = get("info")
+      for (let i = 0; i < txtinfo.length; i++) {
+          txtinfo[i].hidden = true
+      }
+  }
 
     const player = new Player(
       level3Config.playerStartPosX,

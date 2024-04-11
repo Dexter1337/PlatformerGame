@@ -121,7 +121,7 @@ class UI {
 
     onKeyPress("enter", () => {
       play("confirm-ui", { speed: 1.5 })
-      go(1)
+      go(getData("Level",1))
     })
   }
 

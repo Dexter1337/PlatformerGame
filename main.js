@@ -44,7 +44,7 @@ const scenes = {
     bgSoundManager.play("water-ambience")
     const level1 = new Level()
     setGravity(level1Config.gravity)
-    level1.drawBackground("forest-background")
+    level1.drawBackground("space-background")
     level1.drawMapLayout(level1Layout, level1Mappings)
 
     {
@@ -109,7 +109,7 @@ const scenes = {
       level1Config.spiderType
     )
     spiders.setMovementPattern()
-    spiders.enablePassthrough()
+    
 
     level1.drawWaves("water", "wave")
 
@@ -194,7 +194,7 @@ const scenes = {
       level2Config.spiderType
     )
     spiders.setMovementPattern()
-    spiders.enablePassthrough()
+   
 
     const axes = new Axes(
       level2Config.axesPositions.map((axePos) => axePos()),

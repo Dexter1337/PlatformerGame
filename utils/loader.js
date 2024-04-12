@@ -50,6 +50,7 @@ export const load = {
       },
     })
     loadSprite("forest-background", "./assets/Forest_Background_0.png")
+    loadSprite("space-background", "./assets/Space_Background_0.png")
     loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
       sliceX: 3,
       sliceY: 4,

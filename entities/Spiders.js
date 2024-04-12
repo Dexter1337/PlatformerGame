@@ -44,13 +44,13 @@ export class Spiders {
         if (spider.currAnim !== "idle") spider.play("idle")
 
         await new Promise((resolve) => {
-          setTimeout(() => resolve(), 1000)
+           resolve()
         })
 
         if (previousState === "crawl-left") {
           spider.enterState("crawl-right")
         } else {
-          spider.jump()
+          
           if (!spider.isOffScreen()) {
             play("spider-attack", { volume: 0.6 })
           }
